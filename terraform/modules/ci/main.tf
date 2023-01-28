@@ -63,14 +63,14 @@ resource "aws_codebuild_webhook" "Build_Deploy_Pipeline_webhook" {
   build_type   = var.ci_webhook_build_type
   filter_group {
     filter {
-      type    = var.ci_webhook_filter01_type
-      pattern = var.ci_webhook_filter01_pattern
+      type                    = var.ci_webhook_filter01_type
+      pattern                 = var.ci_webhook_filter01_pattern
       exclude_matched_pattern = "false"
     }
 
     filter {
-      type    = var.ci_webhook_filter02_type
-      pattern = var.ci_webhook_filter02_pattern
+      type                    = var.ci_webhook_filter02_type
+      pattern                 = var.ci_webhook_filter02_pattern
       exclude_matched_pattern = "false"
     }
 

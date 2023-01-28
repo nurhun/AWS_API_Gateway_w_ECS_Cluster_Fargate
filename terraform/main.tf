@@ -4,7 +4,7 @@
 module "networking" {
   source = "./modules/networking"
 
-  subnet_availability_zone = var.ZONE
+  subnet_availability_zone   = var.ZONE
   security_group_name        = "sg"
   security_group_description = "Allow django rest 8000 & nginx 80 ports"
 }
@@ -32,9 +32,9 @@ module "lb" {
     module.networking
   ]
 
-  vpc_id               = module.networking.vpc_id
-  subnets_ids           = module.networking.subnets_ids
-  sg_id                = module.networking.sg_id
+  vpc_id      = module.networking.vpc_id
+  subnets_ids = module.networking.subnets_ids
+  sg_id       = module.networking.sg_id
 }
 
 
@@ -98,9 +98,9 @@ module "ci" {
 
   # webhook
 
-  ci_webhook_filter01_type = "EVENT"
-  ci_webhook_filter01_pattern  = "PULL_REQUEST_MERGED"
+  ci_webhook_filter01_type    = "EVENT"
+  ci_webhook_filter01_pattern = "PULL_REQUEST_MERGED"
 
-  ci_webhook_filter02_type = "BASE_REF"
+  ci_webhook_filter02_type    = "BASE_REF"
   ci_webhook_filter02_pattern = var.ci_source_version
 }

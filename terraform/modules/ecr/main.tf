@@ -16,5 +16,3 @@ resource "aws_ecr_repository" "repos" {
     scan_on_push = each.value.scan_on_push
   }
 }
-# terraform import module.ecr.aws_ecr_repository.repos[\"api_repo\"] django_rest_framework_movies_apis_w_react_frontend_backend
-# terraform import module.ecr.aws_ecr_repository.repos[\"frontend_repo\"] django_rest_framework_movies_apis_w_react_frontend_nginx

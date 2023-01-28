@@ -1,3 +1,28 @@
+# --- iam/policy.tf ---
+
+
+resource "aws_iam_policy" "ECS_Logs_Policy" {
+  description = "Policy to allow ECS execution role to create logs groups"
+  name        = "ECS_Logs_Policy"
+  path        = "/"
+
+  policy = <<POLICY
+{
+  "Statement": [
+    {
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    }
+  ],
+  "Version": "2012-10-17"
+}
+POLICY
+}
 
 
 resource "aws_iam_policy" "allowCodeBuildGetSecretValues" {
@@ -36,12 +61,13 @@ resource "aws_iam_policy" "allowCodeBuildGetSecretValues" {
 POLICY
 }
 
-resource "aws_iam_policy" "allowCodeBuildCreateLogs" {
-    description = "allowCodeBuildCreateLogs-eu-north-1"
-    name        = "allowCodeBuildCreateLogs-eu-north-1"
-    path        = "/service-role/"
 
-    policy = <<POLICY
+resource "aws_iam_policy" "allowCodeBuildCreateLogs" {
+  description = "allowCodeBuildCreateLogs-eu-north-1"
+  name        = "allowCodeBuildCreateLogs-eu-north-1"
+  path        = "/service-role/"
+
+  policy = <<POLICY
 {
     "Statement": [
         {

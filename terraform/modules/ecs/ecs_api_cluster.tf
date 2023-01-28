@@ -11,28 +11,14 @@ resource "aws_ecs_cluster" "ecs_api_cluster" {
   }
 
   service_connect_defaults {
-    # namespace = "arn:aws:servicediscovery:eu-north-1:521156286538:namespace/ns-idqmpejob3nwg3yj"
     namespace = aws_service_discovery_private_dns_namespace.movies_dns.arn
   }
-
-  # depends_on = [
-  #   var.execution_role_arn,
-  #   var.vpc_id,
-  #   var.subnet_id,
-  #   var.sg_id
-  # ]
 }
 
 resource "aws_ecs_cluster_capacity_providers" "ecs_cluster_capacity_providers" {
   cluster_name = aws_ecs_cluster.ecs_api_cluster.name
 
   capacity_providers = ["FARGATE", "FARGATE_SPOT"]
-
-  # default_capacity_provider_strategy {
-  #   base              = 1
-  #   weight            = 100
-  #   capacity_provider = "FARGATE"
-  # }
 }
 
 resource "aws_ecs_task_definition" "ecs_api_task_definition" {

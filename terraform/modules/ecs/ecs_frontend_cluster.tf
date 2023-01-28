@@ -1,7 +1,7 @@
 # --- ecs/frontend_cluster.tf ---
 
 resource "aws_ecs_cluster" "ecs_frontend_cluster" {
-  name               = "FrontCluster"
+  name = "FrontCluster"
 
   configuration {
     execute_command_configuration {
@@ -15,11 +15,6 @@ resource "aws_ecs_cluster_capacity_providers" "ecs_frontend_cluster_capacity_pro
 
   capacity_providers = ["FARGATE", "FARGATE_SPOT"]
 
-  # default_capacity_provider_strategy {
-  #   base              = 1
-  #   weight            = 100
-  #   capacity_provider = "FARGATE"
-  # }
 }
 
 resource "aws_ecs_task_definition" "ecs_frontend_task_definition" {

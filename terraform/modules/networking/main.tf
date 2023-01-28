@@ -51,16 +51,6 @@ data "aws_subnet" "eu-north-1a" {
   }
 }
 
-# resource "aws_subnet" "subnet" {
-#   vpc_id            = aws_vpc.vpc.id
-#   cidr_block        = var.subnet_cidr_block
-#   availability_zone = var.subnet_availability_zone
-
-#   tags = {
-#     Name = "eu-north-1a"
-#   }
-# }
-
 resource "aws_route_table_association" "subnet_route_table_association" {
   subnet_id      = data.aws_subnet.eu-north-1a.id
   route_table_id = aws_default_route_table.public_rt.id

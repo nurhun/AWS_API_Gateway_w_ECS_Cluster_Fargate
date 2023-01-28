@@ -236,15 +236,8 @@ x-amazon-apigateway-cors:
     - "*"
   exposeHeaders:
     - "*"
-  #   - "x-apigateway-header"
-  #   - "x-amz-date"
-  #   - "content-type"
   maxAge: 3600
   allowMethods:
     - "*"
   allowHeaders":
     - "*"
-    # - "x-apigateway-header"
-    # - "x-amz-date"
-    # - "content-type"
-    # - "Authorization"
