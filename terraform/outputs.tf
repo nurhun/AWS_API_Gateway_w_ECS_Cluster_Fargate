@@ -1,9 +1,6 @@
 # --- root/outputs.tf ---
 
 ### networking ###
-output "subnet_id_1a" {
-  value = module.networking.subnet_id_1a
-}
 
 
 # ### ecr ###

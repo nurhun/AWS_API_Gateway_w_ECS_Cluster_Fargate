@@ -15,7 +15,3 @@ output "sg_id" {
 output "subnets_ids" {
   value = aws_subnet.subnets.*.id
 }
-
-output "subnet_id_1a" {
-  value = data.aws_subnet.eu-north-1a.id
-}
