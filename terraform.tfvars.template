@@ -1,0 +1,13 @@
+# --- root/terraform.tfvars ---
+
+REGION = ""
+ZONE   = ""
+
+# ### ecr ###
+api_repo      = ""
+frontend_repo = ""
+
+# ### ci ###
+ci_pipeline_name   = ""
+ci_source_location = ""
+ci_source_version  = ""

@@ -2,6 +2,8 @@
 
 This is a demonstration of the capabilities of using the AWS API Gateway to create serverless, container-based APIs using Amazon ECS and Amazon API Gateway.
 
+This demo utilizes sourse code of [this public repo](https://github.com/nurhun/django_rest_framework_movies_apis_w_react_frontend), to view custom modifications to AWS, checkout aws-ecs-and-api-gateway branch.
+
 ![](assets/walkthrough.gif)
 
 <br/>
